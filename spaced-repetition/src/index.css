@@ -15,3 +15,29 @@ body {
 :root {
   --font-size: calc(10px + 1vmin);
 }
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: darkgrey;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+form > * {
+  margin: 5px;
+}

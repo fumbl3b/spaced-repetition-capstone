@@ -10,7 +10,7 @@ const userRouter = require('./user/user-router')
 
 const app = express()
 
-app.use(morgan((NODE_ENV === 'production') ? 'tiny' : 'common', {
+app.use(morgan((NODE_ENV === 'production') ? 'tiny' : 'combined', {
   skip: () => NODE_ENV === 'test',
 }))
 app.use(cors())

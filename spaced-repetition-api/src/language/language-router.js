@@ -58,6 +58,7 @@ languageRouter
 
       res.json({
         nextWord: word.original,
+        pronounciation: word.pronounciation,
         totalScore: language.total_score,
         wordCorrectCount: word.correct_count,
         wordIncorrectCount: word.incorrect_count

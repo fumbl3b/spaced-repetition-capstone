@@ -20,6 +20,7 @@ const LanguageService = {
         'id',
         'language_id',
         'original',
+        'pronounciation',
         'translation',
         'next',
         'memory_value',

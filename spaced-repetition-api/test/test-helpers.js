@@ -52,6 +52,7 @@ function makeLanguagesAndWords(user) {
     {
       id: 1,
       original: 'original 1',
+      pronounciation: 'pronounciation 1',
       translation: 'translation 1',
       language_id: 1,
       next: 2,
@@ -59,6 +60,7 @@ function makeLanguagesAndWords(user) {
     {
       id: 2,
       original: 'original 2',
+      pronounciation: 'pronounciation 2',
       translation: 'translation 2',
       language_id: 1,
       next: 3,
@@ -66,6 +68,7 @@ function makeLanguagesAndWords(user) {
     {
       id: 3,
       original: 'original 3',
+      pronounciation: 'pronounciation 3',
       translation: 'translation 3',
       language_id: 1,
       next: 4,
@@ -73,6 +76,7 @@ function makeLanguagesAndWords(user) {
     {
       id: 4,
       original: 'original 4',
+      pronounciation: 'pronounciation 4',
       translation: 'translation 4',
       language_id: 1,
       next: 5,
@@ -80,6 +84,7 @@ function makeLanguagesAndWords(user) {
     {
       id: 5,
       original: 'original 5',
+      pronounciation: 'pronounciation 5',
       translation: 'translation 5',
       language_id: 1,
       next: null,

@@ -19,16 +19,16 @@ INSERT INTO "language" ("id", "name", "user_id")
 VALUES
   (1, 'Japanese', 1);
 
-INSERT INTO "word" ("id", "language_id", "original", "translation", "next")
+INSERT INTO "word" ("id", "language_id", "original", "pronounciation", "translation", "next")
 VALUES
-  (1, 1, 'こんにちは Konnichiwa', 'hello', 2),
-  (2, 1, 'おいしい Oishī', 'delicious', 3),
-  (3, 1, '山 Yama', 'mountain', 4),
-  (4, 1, '愚か Oroka', 'stupid', 5),
-  (5, 1, '翻訳する Honyaku suru', 'translate', 6),
-  (6, 1, 'かっこいい Kakkoii', 'cool', 7),
-  (7, 1, 'くま Kuma', 'bear', 8),
-  (8, 1, 'ネコ Neko', 'cat', null);
+  (1, 1, 'こんにちは', 'Konnichiwa', 'hello', 2),
+  (2, 1, 'おいしい', 'Oishī', 'delicious', 3),
+  (3, 1, '山','Yama', 'mountain', 4),
+  (4, 1, '愚か', 'Oroka', 'stupid', 5),
+  (5, 1, '翻訳する', 'Honyaku suru', 'translate', 6),
+  (6, 1, 'かっこいい', 'Kakkoii', 'cool', 7),
+  (7, 1, 'くま', 'Kuma', 'bear', 8),
+  (8, 1, 'ネコ', 'Neko', 'cat', null);
 
 UPDATE "language" SET head = 1 WHERE id = 1;
 

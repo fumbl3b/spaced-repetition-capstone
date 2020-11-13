@@ -39,6 +39,7 @@ class DashboardRoute extends Component {
         <li key={idx} className='word'>
           {/* <p>{language}</p> */}
           <h4 className='foreign'>{item.original}</h4>
+          <h5>{item.pronounciation}</h5>
           <p>correct answer count: {item.correct_count}</p>
           <p>incorrect answer count: {item.incorrect_count}</p>
         </li>

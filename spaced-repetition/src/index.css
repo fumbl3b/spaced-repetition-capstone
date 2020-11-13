@@ -41,3 +41,42 @@ form {
 form > * {
   margin: 5px;
 }
+
+ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+.container {
+  background-color: rgb(207, 207, 207);
+  margin: 3px;
+  padding: 20px;
+  border-radius: 10px;
+  color: rgb(70, 70, 70);
+}
+
+.word-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.word { 
+  display: flex;
+  color: rgb(189, 189, 189);
+  font-weight: bolder;
+  text-align: center;
+  flex-direction: column;
+  min-width: 27vw;
+  padding: 0 30px;
+  margin: 5px;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  background-color: rgb(125, 125, 125);
+}
+
+.foreign {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 30px;
+}

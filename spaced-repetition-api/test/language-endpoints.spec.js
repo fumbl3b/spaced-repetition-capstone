@@ -130,7 +130,7 @@ describe('Language Endpoints', function () {
         .expect(200)
         .expect({
           nextWord: headWord.original,
-          pronounciation: null,
+          pronounciation: headWord.pronounciation,
           totalScore: 0,
           wordCorrectCount: 0,
           wordIncorrectCount: 0,
@@ -183,6 +183,7 @@ describe('Language Endpoints', function () {
           .expect(200)
           .expect({
             nextWord: testLanguagesWords[1].original,
+            nextPronounciation: testLanguagesWords[1].pronounciation,
             totalScore: 0,
             wordCorrectCount: 0,
             wordIncorrectCount: 0,
@@ -203,6 +204,7 @@ describe('Language Endpoints', function () {
           .send(incorrectPostBody)
           .expect({
             nextWord: testLanguagesWords[0].original,
+            nextPronounciation: testLanguagesWords[0].pronounciation,
             totalScore: 0,
             wordCorrectCount: 0,
             wordIncorrectCount: 1,
@@ -228,6 +230,7 @@ describe('Language Endpoints', function () {
           .expect(200)
           .expect({
             nextWord: testLanguagesWords[1].original,
+            nextPronounciation: testLanguagesWords[1].pronounciation,
             totalScore: 1,
             wordCorrectCount: 0,
             wordIncorrectCount: 0,
@@ -254,6 +257,7 @@ describe('Language Endpoints', function () {
           .send(correctPostBody)
           .expect({
             nextWord: testLanguagesWords[2].original,
+            nextPronounciation: testLanguagesWords[2].pronounciation,
             totalScore: 2,
             wordCorrectCount: 0,
             wordIncorrectCount: 0,
@@ -270,6 +274,7 @@ describe('Language Endpoints', function () {
           .send(correctPostBody)
           .expect({
             nextWord: testLanguagesWords[0].original,
+            nextPronounciation: testLanguagesWords[0].pronounciation,
             totalScore: 3,
             wordCorrectCount: 1,
             wordIncorrectCount: 0,

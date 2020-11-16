@@ -7,7 +7,7 @@ class LearningRoute extends Component {
   state = {
     head:{},
     guess: '',
-    displayWord: false,
+    displayResult: false,
     res: {},
     totalScore: 0,
     init: true
@@ -47,7 +47,7 @@ class LearningRoute extends Component {
       .then(() => {
         if (guess !== res.answer) {
           this.setState({
-            displayWord: true,
+            displayResult: true,
             totalScore: res.totalScore
           })
         }
@@ -91,13 +91,13 @@ class LearningRoute extends Component {
 
     let data = this.state.head
     
-    if (this.state.displayWord === false) {
+    if (this.state.displayResult === false) {
       return (
         <div>
           <div className='word'>
           <h2>Translate the word:</h2>
           <span>{data.nextWord}</span><br/>
-          <span>{data.pronounciation}</span>
+          <span>{data.nextPronounciation}</span>
           <br/>
           </div>
           <form onSubmit={this.submitGuess}>
@@ -126,13 +126,13 @@ class LearningRoute extends Component {
 
   updateDisplay = (e) => {
     this.setState({
-      displayWord: false,
+      displayResult: false,
       head: this.state.res
     })
   }
 
   displayWrong = () => {
-    if(this.state.displayWord === true) {
+    if(this.state.displayResult === true) {
       if(this.state.res.isCorrect === false) {
         return (
           <div>
@@ -141,7 +141,7 @@ class LearningRoute extends Component {
               <h2>Good try, but not quite right :(</h2>
             </main>
             <div className='DisplayFeedback'>
-              <p>The correct translation for {this.state.head.nextWord} was {this.state.res.answer} and you chose {this.state.guess}!</p>
+              <p>The correct translation for {this.state.head.nextWord} {this.state.head.pronounciation} was {this.state.res.answer} and you chose {this.state.guess}!</p>
             </div>
             <button>Try another word!</button>
           </div>
@@ -154,7 +154,7 @@ class LearningRoute extends Component {
               <h2>You were correct! :D</h2>
             </main>
             <div className='DisplayFeedback'>
-              <p>The correct translation for {this.state.head.nextWord} was {this.state.res.answer} and you chose {this.state.guess}!</p>
+              <p>The correct translation for {this.state.head.nextWord} {this.state.head.pronounciation} was {this.state.res.answer} and you chose {this.state.guess}!</p>
             </div>
             <button>Try another word!</button>
           </div>

@@ -1,5 +1,10 @@
 # Spaced Repetition Capstone
 
+This is an application that can be used to learn new vocabulary using a spaced repetition memory technique.
+
+
+* [Live Link](https://spaced-repetition-jade.vercel.app/)
+
 ## Setup
 
 To setup the application

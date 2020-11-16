@@ -58,22 +58,23 @@ const UserService = {
         .first()
 
       const languageWords = [
-        ['こんにちは', 'hello', 2],
-        ['おいしい', 'delicious', 3],
-        ['山', 'mountain', 4],
-        ['愚か', 'stupid', 5],
-        ['翻訳する', 'translate', 6],
-        ['かっこいい', 'cool', 7],
-        ['くま', 'bear', 8],
-        ['ネコ', 'cat', null],
+        ['こんにちは', 'Konnichiwa', 'hello', 2],
+        ['おいしい', 'Oishī', 'delicious', 3],
+        ['山', 'Yama', 'mountain', 4],
+        ['愚か', 'Oroka', 'stupid', 5],
+        ['翻訳する', 'Honyaku suru', 'translate', 6],
+        ['かっこいい', 'Kakkoii', 'cool', 7],
+        ['くま', 'Kuma', 'bear', 8],
+        ['ネコ', 'Neko', 'cat', null],
       ]
 
       const [languageHeadId] = await trx
         .into('word')
         .insert(
-          languageWords.map(([original, translation, nextInc]) => ({
+          languageWords.map(([original, pronounciation, translation, nextInc]) => ({
             language_id: languageId.id,
             original,
+            pronounciation,
             translation,
             next: nextInc
               ? Number(seq.last_value) + nextInc

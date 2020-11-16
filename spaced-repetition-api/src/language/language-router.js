@@ -1,7 +1,6 @@
 const express = require('express')
 const LanguageService = require('./language-service')
 const { requireAuth } = require('../middleware/jwt-auth')
-const { json } = require('express')
 
 
 const languageRouter = express.Router()
@@ -121,11 +120,12 @@ languageRouter
     )
     res.json({
       nextWord: newList.head.value.original,
-        wordCorrectCount: newList.head.value.correct_count,
-        wordIncorrectCount: newList.head.value.incorrect_count,
-        totalScore: newList.total_score,
-        answer,
-        isCorrect
+      nextPronounciation: newList.head.value.pronounciation,
+      wordCorrectCount: newList.head.value.correct_count,
+      wordIncorrectCount: newList.head.value.incorrect_count,
+      totalScore: newList.total_score,
+      answer,
+      isCorrect
     })
     next()
   } catch (error) {

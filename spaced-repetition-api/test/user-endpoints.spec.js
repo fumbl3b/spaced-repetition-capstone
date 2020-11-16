@@ -175,14 +175,14 @@ describe('User Endpoints', function () {
           name: 'Japanese',
           total_score: 0,
           words: [
-            { original: 'こんにちは Konnichiwa', translation: 'hello' },
-            { original: 'おいしい Oishī', translation: 'delicious' },
-            { original: '山 Yama', translation: 'mountain' },
-            { original: '愚か Oroka', translation: 'stupid' },
-            { original: '翻訳する Honyaku suru', translation: 'translate' },
-            { original: 'かっこいい Kakkoii', translation: 'cool' },
-            { original: 'くま Kuma', translation: 'bear' },
-            { original: 'ネコ Neko', translation: 'cat' },
+            { original: 'こんにちは', pronounciation: 'Konnichiwa', translation: 'hello' },
+            { original: 'おいしい', pronounciation: 'Oishī', translation: 'delicious' },
+            { original: '山', pronounciation: 'Yama', translation: 'mountain' },
+            { original: '愚か', pronounciation: 'Oroka', translation: 'stupid' },
+            { original: '翻訳する', pronounciation: 'Honyaku suru', translation: 'translate' },
+            { original: 'かっこいい', pronounciation: 'Kakkoii', translation: 'cool' },
+            { original: 'くま', pronounciation: 'Kuma', translation: 'bear' },
+            { original: 'ネコ', pronounciation: 'Neko', translation: 'cat' },
           ]
         }
         return supertest(app)

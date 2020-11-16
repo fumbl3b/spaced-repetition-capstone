@@ -7,7 +7,7 @@ class LearningRoute extends Component {
   state = {
     head:{},
     guess: '',
-    showInput: false,
+    displayWord: false,
     res: {},
     totalScore: 0,
     init: true
@@ -47,22 +47,22 @@ class LearningRoute extends Component {
       .then(() => {
         if (guess !== res.answer) {
           this.setState({
-            showInput: true,
+            displayWord: true,
             totalScore: res.totalScore
           })
         }
       })
   }
 
-  postGuess = (val) => {
-    let guess = JSON.stringify({ val })
+  postGuess = (guess) => {
+    let guessObject = JSON.stringify({ guess })
     return fetch(`${config.API_ENDPOINT}/language/guess`, {
       method: "POST",
       headers: {
         authorization: `bearer ${TokenService.getAuthToken()}`,
         'content-type': "application/json"
       },
-      body: guess
+      body: guessObject
     })
     .then(res => {
       if (!res.ok) {
@@ -91,7 +91,7 @@ class LearningRoute extends Component {
 
     let data = this.state.head
     
-    if (this.state.showInput === false) {
+    if (this.state.displayWord === false) {
       return (
         <div>
           <div className='word'>
@@ -116,7 +116,9 @@ class LearningRoute extends Component {
     } else {
       return (
         <main>
-          <form onSubmit={this.updateDisplay}></form>
+          <form onSubmit={this.updateDisplay}>
+            {this.displayWrong()}
+          </form>
         </main>
       )
     }
@@ -124,22 +126,22 @@ class LearningRoute extends Component {
 
   updateDisplay = (e) => {
     this.setState({
-      showInput: false,
+      displayWord: false,
       head: this.state.res
     })
   }
 
   displayWrong = () => {
-    if(this.state.showInput === true) {
+    if(this.state.displayWord === true) {
       if(this.state.res.isCorrect === false) {
         return (
           <div>
-            <div>
+            <main className='DisplayScore'>
               <p>Your total score is: {this.state.res.totalScore}</p>
               <h2>Good try, but not quite right :(</h2>
-            </div>
-            <div>
-              <p>The correct translation for {this.state.head.nexWord} was {this.state.res.answer} and you chose {this.state.guess}!</p>
+            </main>
+            <div className='DisplayFeedback'>
+              <p>The correct translation for {this.state.head.nextWord} was {this.state.res.answer} and you chose {this.state.guess}!</p>
             </div>
             <button>Try another word!</button>
           </div>
@@ -147,12 +149,12 @@ class LearningRoute extends Component {
       } else {
         return (
           <div>
-            <div>
-              <p>Your total score is {this.state.totalScore}</p>
+            <main className='DisplayScore'>
+              <p>Your total score is: {this.state.res.totalScore}</p>
               <h2>You were correct! :D</h2>
-            </div>
-            <div>
-              <p>The correct translation for {this.state.head.nexWord} was {this.state.res.answer} and you chose {this.state.guess}!</p>
+            </main>
+            <div className='DisplayFeedback'>
+              <p>The correct translation for {this.state.head.nextWord} was {this.state.res.answer} and you chose {this.state.guess}!</p>
             </div>
             <button>Try another word!</button>
           </div>
